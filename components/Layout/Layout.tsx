@@ -1,13 +1,19 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import { ReactNode } from 'react'
 import styles from './Layout.module.css'
 import utilStyles from '../../styles/utils.module.css'
 import Link from 'next/link'
 
+interface IProps {
+  children: ReactNode
+  home?: boolean
+}
+
 const name = 'NekoChan'
 export const siteTitle = 'Next.js Blog'
 
-export default function Layout({ children, home }) {
+export default function Layout({ children, home }: IProps) {
   return (
     <div className={styles.container}>
       <Head>
